@@ -1,0 +1,52 @@
+#############  python  虚拟环境的  使用
+
+https://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html
+
+
+Window : 
+	1、 install   (PyCharm 自带)
+		pip install virtualenv 
+		pip install virtualenvwrapper-win
+			检验 virtualenv 是否安装成功：
+				whereis virtualenv      ------》 belong to  全局 python
+
+	2、 配置环境变量：
+		系统变量  [WORKON_HOME] = 虚拟环境所在目录
+			lsvirtualenv ： 验证 是否配置成功  ------》 belong to  全局 python
+		在Windows中，WORKON_HOME默认的路径是 %USERPROFILE%\Envs 。
+
+	3、 创建一个虚拟环境：----》 与主机 python 环境相隔离
+		一：mkvirtualenv env_Name    ------》 belong to  全局 python
+		二：virtualenv [-p 主机python.exe全局路径] env_Name
+
+ 	4、 激活 虚拟环境： 
+		cd 到 虚拟环境 目录下的 .\Scripts 目录中：  
+			运行：  .\activate.bat   ,  window 批处理程序
+	5、 退出虚拟环境：
+		cd 到 虚拟环境 目录下的 .\Scripts 目录中：
+			运行： .\deactivate.bat 
+其他相关命令：
+	1、快速切换虚拟环境：
+		workon env_Name         ------》 belong to  全局 python
+
+	2、删除虚拟环境
+		rmvirtualenv env_Name   ------》 belong to  全局 python
+
+	3、查询 主机python Scripts And 虚拟 python Script 的 Location :
+		whereis  script_Name    ------》 belong to  全局 python
+
+	4、为了保持您的环境的一致性，“冷冻住（freeze）
+		在项目目录下 创建： requirements.txt 文件，
+			能帮助确保安装、部署和开发者之间的一致性
+			创建：	pip freeze > requirements.txt   
+			安装：	pip install -r requirements.txt
+
+
+Linux 使用虚拟环境： 
+	https://blog.csdn.net/sinat_41898105/article/details/80714974
+
+	1、 install   (PyCharm 自带)
+		pip install virtualenv 
+		pip install virtualenvwrapper
+
+		
